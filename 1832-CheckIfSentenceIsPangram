@@ -1,0 +1,21 @@
+public class Solution {
+    public bool CheckIfPangram(string sentence) {
+        if(sentence == null || sentence.Length == 0)
+            return false;
+        
+        int[] freqCount = new int[26];
+        
+        for(int i = 0; i < sentence.Length; i++)
+        {
+            freqCount[sentence[i] - 97] +=1;
+        }
+        
+        for(int i = 0; i < freqCount.Length; i++)
+        {
+            if(freqCount[i] == 0)
+                return false;
+        }
+        
+        return true;
+    }
+}
